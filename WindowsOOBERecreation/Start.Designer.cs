@@ -78,17 +78,19 @@
             // usernameBox
             // 
             this.usernameBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usernameBox.Location = new System.Drawing.Point(164, 206);
+            this.usernameBox.Location = new System.Drawing.Point(164, 207);
+            this.usernameBox.Multiline = true;
             this.usernameBox.Name = "usernameBox";
-            this.usernameBox.Size = new System.Drawing.Size(254, 23);
+            this.usernameBox.Size = new System.Drawing.Size(254, 20);
             this.usernameBox.TabIndex = 3;
             // 
             // computernameBox
             // 
             this.computernameBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.computernameBox.Location = new System.Drawing.Point(164, 253);
+            this.computernameBox.Location = new System.Drawing.Point(164, 252);
+            this.computernameBox.Multiline = true;
             this.computernameBox.Name = "computernameBox";
-            this.computernameBox.Size = new System.Drawing.Size(254, 23);
+            this.computernameBox.Size = new System.Drawing.Size(254, 20);
             this.computernameBox.TabIndex = 5;
             this.computernameBox.Text = "PC";
             // 
@@ -96,7 +98,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(161, 235);
+            this.label3.Location = new System.Drawing.Point(161, 233);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(132, 15);
             this.label3.TabIndex = 4;
@@ -106,16 +108,16 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel1.Controls.Add(this.nextButton);
-            this.panel1.Location = new System.Drawing.Point(-3, 409);
+            this.panel1.Location = new System.Drawing.Point(-3, 412);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(588, 51);
+            this.panel1.Size = new System.Drawing.Size(588, 48);
             this.panel1.TabIndex = 6;
             // 
             // nextButton
             // 
             this.nextButton.Enabled = false;
             this.nextButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nextButton.Location = new System.Drawing.Point(503, 13);
+            this.nextButton.Location = new System.Drawing.Point(503, 11);
             this.nextButton.Name = "nextButton";
             this.nextButton.Size = new System.Drawing.Size(74, 23);
             this.nextButton.TabIndex = 7;
@@ -127,7 +129,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(258, 391);
+            this.label4.Location = new System.Drawing.Point(258, 394);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(325, 15);
             this.label4.TabIndex = 7;
@@ -136,7 +138,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(7, 382);
+            this.pictureBox2.Location = new System.Drawing.Point(7, 385);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(24, 24);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -164,6 +166,7 @@
             this.Name = "Start";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.Start_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

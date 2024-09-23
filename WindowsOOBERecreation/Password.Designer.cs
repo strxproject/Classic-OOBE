@@ -45,7 +45,7 @@
             // nextButton
             // 
             this.nextButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nextButton.Location = new System.Drawing.Point(503, 13);
+            this.nextButton.Location = new System.Drawing.Point(503, 11);
             this.nextButton.Name = "nextButton";
             this.nextButton.Size = new System.Drawing.Size(74, 23);
             this.nextButton.TabIndex = 7;
@@ -57,9 +57,9 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel1.Controls.Add(this.nextButton);
-            this.panel1.Location = new System.Drawing.Point(-3, 408);
+            this.panel1.Location = new System.Drawing.Point(-3, 411);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(588, 51);
+            this.panel1.Size = new System.Drawing.Size(588, 48);
             this.panel1.TabIndex = 7;
             // 
             // label1
