@@ -34,7 +34,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.timeZoneCombo = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.DSTCheckbox = new System.Windows.Forms.CheckBox();
             this.label3 = new System.Windows.Forms.Label();
             this.clockBrowser = new System.Windows.Forms.WebBrowser();
             this.label4 = new System.Windows.Forms.Label();
@@ -99,18 +99,18 @@
             this.label2.TabIndex = 11;
             this.label2.Text = "Time zone:";
             // 
-            // checkBox1
+            // DSTCheckbox
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Checked = true;
-            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.Location = new System.Drawing.Point(39, 118);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(299, 19);
-            this.checkBox1.TabIndex = 12;
-            this.checkBox1.Text = "Automatically adjust clock for Daylight Saving Time";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.DSTCheckbox.AutoSize = true;
+            this.DSTCheckbox.Checked = true;
+            this.DSTCheckbox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.DSTCheckbox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DSTCheckbox.Location = new System.Drawing.Point(39, 118);
+            this.DSTCheckbox.Name = "DSTCheckbox";
+            this.DSTCheckbox.Size = new System.Drawing.Size(299, 19);
+            this.DSTCheckbox.TabIndex = 12;
+            this.DSTCheckbox.Text = "Automatically adjust clock for Daylight Saving Time";
+            this.DSTCheckbox.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
@@ -150,7 +150,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.clockBrowser);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.DSTCheckbox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.timeZoneCombo);
             this.Controls.Add(this.label1);
@@ -175,7 +175,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox timeZoneCombo;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox DSTCheckbox;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.WebBrowser clockBrowser;
         private System.Windows.Forms.Label label4;

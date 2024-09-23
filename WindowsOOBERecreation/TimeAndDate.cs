@@ -1,8 +1,8 @@
-﻿using Microsoft.Win32;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Windows.Forms;
+using System.Linq;
 
 namespace WindowsOOBERecreation
 {
@@ -103,84 +103,25 @@ namespace WindowsOOBERecreation
 
         private void FetchAndPopulateTimeZones(ComboBox timeZoneCombo)
         {
-            const string timeZonesRegistryPath = @"SOFTWARE\Microsoft\Windows NT\CurrentVersion\Time Zones";
-            const string timeZoneInfoPath = @"SYSTEM\CurrentControlSet\Control\TimeZoneInformation";
-
-            Dictionary<string, string> tzCodesTemp = new Dictionary<string, string>();
-
             try
             {
-                string currentTimeZone = "";
-                using (RegistryKey timeZoneInfoKey = Registry.LocalMachine.OpenSubKey(timeZoneInfoPath))
-                {
-                    if (timeZoneInfoKey != null)
-                    {
-                        currentTimeZone = timeZoneInfoKey.GetValue("TimeZoneKeyName") as string;
-                        Console.WriteLine($"Current time zone key name: {currentTimeZone}");
-                    }
-                    else
-                    {
-                        Console.WriteLine("Unable to access current time zone information.");
-                    }
-                }
-
-                using (RegistryKey timeZonesKey = Registry.LocalMachine.OpenSubKey(timeZonesRegistryPath))
-                {
-                    if (timeZonesKey != null)
-                    {
-                        foreach (string timeZoneName in timeZonesKey.GetSubKeyNames())
-                        {
-                            using (RegistryKey timeZoneKey = timeZonesKey.OpenSubKey(timeZoneName))
-                            {
-                                string displayName = timeZoneKey?.GetValue("Display") as string;
-                                if (!string.IsNullOrEmpty(displayName))
-                                {
-                                    tzCodesTemp[displayName] = timeZoneName;
-                                    Console.WriteLine($"Found time zone: {displayName} ({timeZoneName})");
-                                }
-                            }
-                        }
-                    }
-                    else
-                    {
-                        Console.WriteLine("Unable to access time zones registry key.");
-                    }
-                }
-
-                List<string> tzCodes = new List<string>();
-
-                foreach (var kvp in tzCodesTemp)
-                {
-                    if (kvp.Key.Length > 4 && kvp.Key[4] == '-')
-                    {
-                        tzCodes.Insert(0, kvp.Value);
-                    }
-                    else
-                    {
-                        tzCodes.Add(kvp.Value);
-                    }
-                }
+                var timeZones = TimeZoneInfo.GetSystemTimeZones();
+                string currentTimeZoneId = TimeZoneInfo.Local.Id;
 
                 timeZoneCombo.Items.Clear();
-                foreach (string tzCode in tzCodes)
-                {
-                    using (RegistryKey timeZoneKey = Registry.LocalMachine.OpenSubKey(timeZonesRegistryPath + "\\" + tzCode))
-                    {
-                        string displayName = timeZoneKey?.GetValue("Display") as string;
-                        if (!string.IsNullOrEmpty(displayName))
-                        {
-                            timeZoneCombo.Items.Add(displayName);
-                            Console.WriteLine($"Added time zone to ComboBox: {displayName}");
 
-                            if (tzCode == currentTimeZone)
-                            {
-                                timeZoneCombo.SelectedItem = displayName;
-                                Console.WriteLine($"Selected current time zone: {displayName}");
-                            }
-                        }
+                foreach (var timeZone in timeZones)
+                {
+                    timeZoneCombo.Items.Add(timeZone.DisplayName);
+
+                    DSTCheckbox.Enabled = timeZone.SupportsDaylightSavingTime;
+
+                    if (timeZone.Id == currentTimeZoneId)
+                    {
+                        timeZoneCombo.SelectedItem = timeZone.DisplayName;
+                        DSTCheckbox.Checked = timeZone.SupportsDaylightSavingTime;
                     }
                 }
-
             }
             catch (Exception ex)
             {
@@ -193,42 +134,36 @@ namespace WindowsOOBERecreation
             ComboBox comboBox = sender as ComboBox;
             if (comboBox != null && comboBox.SelectedItem != null)
             {
-                string selectedTimeZone = comboBox.SelectedItem.ToString();
-                TimeZoneInfo timeZone = FindSystemTimeZoneById(selectedTimeZone);
+                string selectedTimeZoneDisplayName = comboBox.SelectedItem.ToString();
+                var timeZone = TimeZoneInfo.GetSystemTimeZones().FirstOrDefault(tz => tz.DisplayName == selectedTimeZoneDisplayName);
                 if (timeZone != null)
                 {
+                    DSTCheckbox.Enabled = timeZone.SupportsDaylightSavingTime;
+                    if (timeZone.SupportsDaylightSavingTime)
+                    {
+                        DSTCheckbox.Checked = true;
+                    }
+                    else
+                    {
+                        DSTCheckbox.Checked = false;
+                    }
+
                     SetTimeZone(timeZone.Id);
                 }
                 else
                 {
-                    Console.WriteLine($"Time zone not found: {selectedTimeZone}");
+                    Console.WriteLine($"Time zone not found: {selectedTimeZoneDisplayName}");
                 }
             }
         }
 
-        private TimeZoneInfo FindSystemTimeZoneById(string timeZoneId)
-        {
-            try
-            {
-                return TimeZoneInfo.FindSystemTimeZoneById(timeZoneId);
-            }
-            catch (TimeZoneNotFoundException)
-            {
-                Console.WriteLine($"Time zone not found: {timeZoneId}");
-            }
-            catch (InvalidTimeZoneException)
-            {
-                Console.WriteLine($"Invalid time zone: {timeZoneId}");
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error finding time zone: {ex.Message}");
-            }
-            return null;
-        }
-
         private void SetTimeZone(string timeZoneId)
         {
+            if (DSTCheckbox.Checked == false)
+            {
+                timeZoneId += "_dstoff";
+            }
+
             try
             {
                 ProcessStartInfo processStartInfo = new ProcessStartInfo
