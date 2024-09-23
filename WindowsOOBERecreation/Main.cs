@@ -6,6 +6,10 @@ namespace WindowsOOBERecreation
     public partial class Main : Form
     {
         private Panel mainPanel;
+
+        public string Username { get; set; }
+        public string ComputerName { get; set; }
+
         public Main()
         {
             InitializeComponent();
@@ -35,9 +39,9 @@ namespace WindowsOOBERecreation
             LoadFormIntoPanel(startForm);
         }
 
-        private void LoadPasswordForm()
+        public void LoadPasswordForm()
         {
-            Password passwordForm = new Password(this);
+            Password passwordForm = new Password(this, Username, ComputerName);
             LoadFormIntoPanel(passwordForm);
         }
 
@@ -46,6 +50,5 @@ namespace WindowsOOBERecreation
             TimeAndDate timeAndDateForm = new TimeAndDate(this);
             LoadFormIntoPanel(timeAndDateForm);
         }
-
     }
 }

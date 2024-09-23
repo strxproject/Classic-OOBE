@@ -32,11 +32,11 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.computernameBox = new System.Windows.Forms.TextBox();
+            this.confpasswordBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.usernameBox = new System.Windows.Forms.TextBox();
+            this.passwordBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.passwordHintBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
@@ -85,13 +85,13 @@
     "ccount from\r\nunwanted users. Be sure to remember your password or keep it in a s" +
     "afe place.\r\n";
             // 
-            // computernameBox
+            // confpasswordBox
             // 
-            this.computernameBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.computernameBox.Location = new System.Drawing.Point(39, 179);
-            this.computernameBox.Name = "computernameBox";
-            this.computernameBox.Size = new System.Drawing.Size(254, 23);
-            this.computernameBox.TabIndex = 13;
+            this.confpasswordBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.confpasswordBox.Location = new System.Drawing.Point(39, 179);
+            this.confpasswordBox.Name = "confpasswordBox";
+            this.confpasswordBox.Size = new System.Drawing.Size(254, 23);
+            this.confpasswordBox.TabIndex = 13;
             // 
             // label3
             // 
@@ -103,13 +103,13 @@
             this.label3.TabIndex = 12;
             this.label3.Text = "Retype your password:";
             // 
-            // usernameBox
+            // passwordBox
             // 
-            this.usernameBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usernameBox.Location = new System.Drawing.Point(39, 132);
-            this.usernameBox.Name = "usernameBox";
-            this.usernameBox.Size = new System.Drawing.Size(254, 23);
-            this.usernameBox.TabIndex = 11;
+            this.passwordBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.passwordBox.Location = new System.Drawing.Point(39, 132);
+            this.passwordBox.Name = "passwordBox";
+            this.passwordBox.Size = new System.Drawing.Size(254, 23);
+            this.passwordBox.TabIndex = 11;
             // 
             // label4
             // 
@@ -121,13 +121,13 @@
             this.label4.TabIndex = 10;
             this.label4.Text = "Type a password (recommended):";
             // 
-            // textBox1
+            // passwordHintBox
             // 
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(39, 228);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(254, 23);
-            this.textBox1.TabIndex = 15;
+            this.passwordHintBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.passwordHintBox.Location = new System.Drawing.Point(39, 228);
+            this.passwordHintBox.Name = "passwordHintBox";
+            this.passwordHintBox.Size = new System.Drawing.Size(254, 23);
+            this.passwordHintBox.TabIndex = 15;
             // 
             // label5
             // 
@@ -157,11 +157,11 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(583, 458);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.passwordHintBox);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.computernameBox);
+            this.Controls.Add(this.confpasswordBox);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.usernameBox);
+            this.Controls.Add(this.passwordBox);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -183,11 +183,11 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox computernameBox;
+        private System.Windows.Forms.TextBox confpasswordBox;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox usernameBox;
+        private System.Windows.Forms.TextBox passwordBox;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox passwordHintBox;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
     }

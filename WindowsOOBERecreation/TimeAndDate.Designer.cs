@@ -32,7 +32,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.nextButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.timeZoneCombo = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -80,13 +80,14 @@
             this.label1.TabIndex = 9;
             this.label1.Text = "Review your time and date settings";
             // 
-            // comboBox1
+            // timeZoneCombo
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(39, 91);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(328, 21);
-            this.comboBox1.TabIndex = 10;
+            this.timeZoneCombo.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.timeZoneCombo.FormattingEnabled = true;
+            this.timeZoneCombo.Location = new System.Drawing.Point(39, 91);
+            this.timeZoneCombo.Name = "timeZoneCombo";
+            this.timeZoneCombo.Size = new System.Drawing.Size(328, 23);
+            this.timeZoneCombo.TabIndex = 10;
             // 
             // label2
             // 
@@ -101,6 +102,8 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
+            this.checkBox1.Checked = true;
+            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBox1.Location = new System.Drawing.Point(39, 118);
             this.checkBox1.Name = "checkBox1";
@@ -149,7 +152,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.timeZoneCombo);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.monthCalendar1);
@@ -170,7 +173,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button nextButton;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox timeZoneCombo;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Label label3;

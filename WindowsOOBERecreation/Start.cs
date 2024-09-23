@@ -7,6 +7,9 @@ namespace WindowsOOBERecreation
     {
         private Main _mainForm;
 
+        public string Username { get; private set; }
+        public string ComputerName { get; private set; }
+
         public Start(Main mainForm)
         {
             InitializeComponent();
@@ -21,7 +24,11 @@ namespace WindowsOOBERecreation
         {
             string sanitizedUsername = usernameBox.Text.Replace(" ", string.Empty);
             computernameBox.Text = $"{sanitizedUsername}-PC";
+
             nextButton.Enabled = !string.IsNullOrWhiteSpace(usernameBox.Text);
+
+            Username = sanitizedUsername;
+            ComputerName = computernameBox.Text;
         }
 
         private void ComputernameBox_KeyPress(object sender, KeyPressEventArgs e)
@@ -34,8 +41,10 @@ namespace WindowsOOBERecreation
 
         private void nextButton_Click(object sender, EventArgs e)
         {
-            Password passwordForm = new Password(_mainForm);
-            _mainForm.LoadFormIntoPanel(passwordForm);
+            _mainForm.Username = Username;
+            _mainForm.ComputerName = ComputerName;
+
+            _mainForm.LoadPasswordForm();
         }
     }
 }
