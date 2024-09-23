@@ -53,15 +53,15 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel1.Controls.Add(this.nextButton);
-            this.panel1.Location = new System.Drawing.Point(-3, 404);
+            this.panel1.Location = new System.Drawing.Point(-3, 408);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(588, 55);
+            this.panel1.Size = new System.Drawing.Size(588, 51);
             this.panel1.TabIndex = 8;
             // 
             // nextButton
             // 
             this.nextButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nextButton.Location = new System.Drawing.Point(502, 14);
+            this.nextButton.Location = new System.Drawing.Point(503, 13);
             this.nextButton.Name = "nextButton";
             this.nextButton.Size = new System.Drawing.Size(74, 23);
             this.nextButton.TabIndex = 7;
@@ -105,7 +105,7 @@
             this.DSTCheckbox.Checked = true;
             this.DSTCheckbox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.DSTCheckbox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DSTCheckbox.Location = new System.Drawing.Point(39, 118);
+            this.DSTCheckbox.Location = new System.Drawing.Point(39, 120);
             this.DSTCheckbox.Name = "DSTCheckbox";
             this.DSTCheckbox.Size = new System.Drawing.Size(299, 19);
             this.DSTCheckbox.TabIndex = 12;

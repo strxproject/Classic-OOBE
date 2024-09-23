@@ -106,16 +106,16 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel1.Controls.Add(this.nextButton);
-            this.panel1.Location = new System.Drawing.Point(-3, 405);
+            this.panel1.Location = new System.Drawing.Point(-3, 409);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(588, 55);
+            this.panel1.Size = new System.Drawing.Size(588, 51);
             this.panel1.TabIndex = 6;
             // 
             // nextButton
             // 
             this.nextButton.Enabled = false;
             this.nextButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nextButton.Location = new System.Drawing.Point(503, 15);
+            this.nextButton.Location = new System.Drawing.Point(503, 13);
             this.nextButton.Name = "nextButton";
             this.nextButton.Size = new System.Drawing.Size(74, 23);
             this.nextButton.TabIndex = 7;
@@ -127,7 +127,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(258, 388);
+            this.label4.Location = new System.Drawing.Point(258, 391);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(325, 15);
             this.label4.TabIndex = 7;
@@ -136,7 +136,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(7, 379);
+            this.pictureBox2.Location = new System.Drawing.Point(7, 382);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(24, 24);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;

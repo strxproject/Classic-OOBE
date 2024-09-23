@@ -45,7 +45,7 @@
             // nextButton
             // 
             this.nextButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nextButton.Location = new System.Drawing.Point(502, 14);
+            this.nextButton.Location = new System.Drawing.Point(503, 13);
             this.nextButton.Name = "nextButton";
             this.nextButton.Size = new System.Drawing.Size(74, 23);
             this.nextButton.TabIndex = 7;
@@ -57,9 +57,9 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel1.Controls.Add(this.nextButton);
-            this.panel1.Location = new System.Drawing.Point(-3, 404);
+            this.panel1.Location = new System.Drawing.Point(-3, 408);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(588, 55);
+            this.panel1.Size = new System.Drawing.Size(588, 51);
             this.panel1.TabIndex = 7;
             // 
             // label1
@@ -88,16 +88,17 @@
             // confpasswordBox
             // 
             this.confpasswordBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.confpasswordBox.Location = new System.Drawing.Point(39, 179);
+            this.confpasswordBox.Location = new System.Drawing.Point(39, 181);
             this.confpasswordBox.Name = "confpasswordBox";
             this.confpasswordBox.Size = new System.Drawing.Size(254, 23);
             this.confpasswordBox.TabIndex = 13;
+            this.confpasswordBox.UseSystemPasswordChar = true;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(36, 161);
+            this.label3.Location = new System.Drawing.Point(36, 163);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(126, 15);
             this.label3.TabIndex = 12;
@@ -110,6 +111,7 @@
             this.passwordBox.Name = "passwordBox";
             this.passwordBox.Size = new System.Drawing.Size(254, 23);
             this.passwordBox.TabIndex = 11;
+            this.passwordBox.UseSystemPasswordChar = true;
             // 
             // label4
             // 
@@ -124,7 +126,7 @@
             // passwordHintBox
             // 
             this.passwordHintBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passwordHintBox.Location = new System.Drawing.Point(39, 228);
+            this.passwordHintBox.Location = new System.Drawing.Point(39, 231);
             this.passwordHintBox.Name = "passwordHintBox";
             this.passwordHintBox.Size = new System.Drawing.Size(254, 23);
             this.passwordHintBox.TabIndex = 15;
@@ -133,7 +135,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(36, 210);
+            this.label5.Location = new System.Drawing.Point(36, 213);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(118, 15);
             this.label5.TabIndex = 14;
