@@ -55,6 +55,12 @@
     <Compile Include="Finalizing.Designer.cs">
       <DependentUpon>Finalizing.cs</DependentUpon>
     </Compile>
+    <Compile Include="License.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="License.Designer.cs">
+      <DependentUpon>License.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +72,12 @@
     </Compile>
     <Compile Include="Password.Designer.cs">
       <DependentUpon>Password.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductKey.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductKey.Designer.cs">
+      <DependentUpon>ProductKey.cs</DependentUpon>
     </Compile>
     <Compile Include="Start.cs">
       <SubType>Form</SubType>
@@ -84,11 +96,17 @@
     <EmbeddedResource Include="Finalizing.resx">
       <DependentUpon>Finalizing.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="License.resx">
+      <DependentUpon>License.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Password.resx">
       <DependentUpon>Password.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductKey.resx">
+      <DependentUpon>ProductKey.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Start.resx">
       <DependentUpon>Start.cs</DependentUpon>

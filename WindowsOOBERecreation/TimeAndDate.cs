@@ -198,8 +198,8 @@ namespace WindowsOOBERecreation
 
         private void nextButton_Click(object sender, EventArgs e)
         {
-            Finalizing finalizingForm = new Finalizing(_mainForm);
-            _mainForm.LoadFormIntoPanel(finalizingForm);
+            License licenseForm = new License(_mainForm);
+            _mainForm.LoadFormIntoPanel(licenseForm);
         }
     }
 }

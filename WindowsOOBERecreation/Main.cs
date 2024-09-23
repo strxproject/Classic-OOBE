@@ -50,5 +50,11 @@ namespace WindowsOOBERecreation
             TimeAndDate timeAndDateForm = new TimeAndDate(this);
             LoadFormIntoPanel(timeAndDateForm);
         }
+
+        private void LoadLicenseForm()
+        {
+            License LicenseForm = new License(this);
+            LoadFormIntoPanel(LicenseForm);
+        }
     }
 }
