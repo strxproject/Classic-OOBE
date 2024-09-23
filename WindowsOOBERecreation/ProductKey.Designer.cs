@@ -136,10 +136,11 @@
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.linkLabel1.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(105)))), ((int)(((byte)(140)))));
             this.linkLabel1.Location = new System.Drawing.Point(45, 346);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(104, 13);
+            this.linkLabel1.Size = new System.Drawing.Size(106, 15);
             this.linkLabel1.TabIndex = 24;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "What is activation?";
@@ -148,10 +149,11 @@
             // linkLabel2
             // 
             this.linkLabel2.AutoSize = true;
+            this.linkLabel2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.linkLabel2.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(105)))), ((int)(((byte)(140)))));
-            this.linkLabel2.Location = new System.Drawing.Point(45, 362);
+            this.linkLabel2.Location = new System.Drawing.Point(45, 364);
             this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(146, 13);
+            this.linkLabel2.Size = new System.Drawing.Size(151, 15);
             this.linkLabel2.TabIndex = 25;
             this.linkLabel2.TabStop = true;
             this.linkLabel2.Text = "Read our privacy statement";
