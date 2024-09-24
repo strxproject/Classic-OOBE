@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WindowsOOBERecreation
@@ -19,16 +15,6 @@ namespace WindowsOOBERecreation
             InitializeComponent();
         }
 
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-
-        }
-
-        private void ProductKey_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void nextButton_Click(object sender, EventArgs e)
         {
             TimeAndDate timeAndDateForm = new TimeAndDate(_mainForm);
@@ -40,5 +26,32 @@ namespace WindowsOOBERecreation
             TimeAndDate timeAndDateForm = new TimeAndDate(_mainForm);
             _mainForm.LoadFormIntoPanel(timeAndDateForm);
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            string input = new string(textBox1.Text.Where(char.IsLetterOrDigit).ToArray());
+            input = input.ToUpper();
+
+            if (input.Length > 25)
+            {
+                input = input.Substring(0, 25);
+            }
+
+            StringBuilder formattedInput = new StringBuilder();
+            for (int i = 0; i < input.Length; i++)
+            {
+                if (i > 0 && i % 5 == 0)
+                {
+                    formattedInput.Append("-");
+                }
+                formattedInput.Append(input[i]);
+            }
+
+            textBox1.TextChanged -= textBox1_TextChanged;
+            textBox1.Text = formattedInput.ToString();
+            textBox1.SelectionStart = textBox1.Text.Length;
+            textBox1.TextChanged += textBox1_TextChanged;
+        }
+
     }
 }

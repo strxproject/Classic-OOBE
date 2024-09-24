@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Windows.Forms;
 using System.Linq;
+using System.Runtime.InteropServices;
 
 namespace WindowsOOBERecreation
 {
@@ -202,6 +203,52 @@ namespace WindowsOOBERecreation
         {
             License licenseForm = new License(_mainForm);
             _mainForm.LoadFormIntoPanel(licenseForm);
+        }
+
+        public class ChangeDate
+        {
+            [DllImport("kernel32.dll", SetLastError = true)]
+            public static extern bool SetSystemTime(ref SYSTEMTIME st);
+
+            [StructLayout(LayoutKind.Sequential)]
+            public struct SYSTEMTIME
+            {
+                public ushort wYear;
+                public ushort wMonth;
+                public ushort wDayOfWeek;
+                public ushort wDay;
+                public ushort wHour;
+                public ushort wMinute;
+                public ushort wSecond;
+                public ushort wMilliseconds;
+            }
+        }
+
+        private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
+        {
+            DateTime selectedDate = e.Start;
+
+            ChangeDate.SYSTEMTIME sysTime = new ChangeDate.SYSTEMTIME
+            {
+                wYear = (ushort)selectedDate.Year,
+                wMonth = (ushort)selectedDate.Month,
+                wDay = (ushort)selectedDate.Day,
+                wHour = (ushort)DateTime.Now.Hour,
+                wMinute = (ushort)DateTime.Now.Minute,
+                wSecond = (ushort)DateTime.Now.Second,
+                wMilliseconds = (ushort)DateTime.Now.Millisecond
+            };
+
+            bool result = ChangeDate.SetSystemTime(ref sysTime);
+
+            if (!result)
+            {
+                MessageBox.Show("Failed to set the system date.");
+            }
+            else
+            {
+                MessageBox.Show("System date updated successfully!");
+            }
         }
     }
 }

@@ -49,6 +49,7 @@
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.ShowToday = false;
             this.monthCalendar1.TabIndex = 0;
+            this.monthCalendar1.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
             // 
             // panel1
             // 
@@ -96,7 +97,7 @@
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(37, 90);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 15);
+            this.label2.Size = new System.Drawing.Size(65, 15);
             this.label2.TabIndex = 11;
             this.label2.Text = "Time zone:";
             // 
@@ -108,7 +109,7 @@
             this.DSTCheckbox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DSTCheckbox.Location = new System.Drawing.Point(38, 148);
             this.DSTCheckbox.Name = "DSTCheckbox";
-            this.DSTCheckbox.Size = new System.Drawing.Size(298, 19);
+            this.DSTCheckbox.Size = new System.Drawing.Size(299, 19);
             this.DSTCheckbox.TabIndex = 12;
             this.DSTCheckbox.Text = "Automatically adjust clock for Daylight Saving Time";
             this.DSTCheckbox.UseVisualStyleBackColor = true;
@@ -138,7 +139,7 @@
             this.label4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(298, 183);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(36, 15);
+            this.label4.Size = new System.Drawing.Size(37, 15);
             this.label4.TabIndex = 15;
             this.label4.Text = "Time:";
             // 

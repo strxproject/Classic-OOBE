@@ -35,6 +35,9 @@
   <PropertyGroup>
     <ApplicationIcon>wysi_icon.ico</ApplicationIcon>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app1.manifest</ApplicationManifest>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -124,6 +127,7 @@
     <EmbeddedResource Include="TimeAndDate.resx">
       <DependentUpon>TimeAndDate.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="app1.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
