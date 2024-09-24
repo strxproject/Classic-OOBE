@@ -12,8 +12,10 @@ namespace WindowsOOBERecreation
 {
     public partial class ProductKey : Form
     {
-        public ProductKey()
+        private Main _mainForm;
+        public ProductKey(Main mainForm)
         {
+            _mainForm = mainForm;
             InitializeComponent();
         }
 
@@ -25,6 +27,18 @@ namespace WindowsOOBERecreation
         private void ProductKey_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void nextButton_Click(object sender, EventArgs e)
+        {
+            TimeAndDate timeAndDateForm = new TimeAndDate(_mainForm);
+            _mainForm.LoadFormIntoPanel(timeAndDateForm);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            TimeAndDate timeAndDateForm = new TimeAndDate(_mainForm);
+            _mainForm.LoadFormIntoPanel(timeAndDateForm);
         }
     }
 }

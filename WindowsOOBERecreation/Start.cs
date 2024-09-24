@@ -16,7 +16,11 @@ namespace WindowsOOBERecreation
             _mainForm = mainForm;
 
             usernameBox.TextChanged += UsernameBox_TextChanged;
+            usernameBox.AutoSize = false;
+            usernameBox.Height = 20;
             computernameBox.KeyPress += ComputernameBox_KeyPress;
+            computernameBox.AutoSize = false;
+            computernameBox.Height = 20;
             nextButton.Enabled = false;
         }
 

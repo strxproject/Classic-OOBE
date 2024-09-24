@@ -67,15 +67,15 @@ namespace WindowsOOBERecreation
                 ExecuteCommand($"net localgroup Administrators /add \"{_username}\"");
                 ChangeComputerName(_computerName);
 
-                TimeAndDate timeAndDateForm = new TimeAndDate(_mainForm);
-                _mainForm.LoadFormIntoPanel(timeAndDateForm);
+                ProductKey ProductKeyForm = new ProductKey(_mainForm);
+                _mainForm.LoadFormIntoPanel(ProductKeyForm);
             }
             catch (Exception ex)
             {
                 Console.WriteLine($"An error occurred during account creation: {ex.Message}");
 
-                TimeAndDate timeAndDateForm = new TimeAndDate(_mainForm);
-                _mainForm.LoadFormIntoPanel(timeAndDateForm);
+                ProductKey ProductKeyForm = new ProductKey(_mainForm);
+                _mainForm.LoadFormIntoPanel(ProductKeyForm);
             }
         }
 

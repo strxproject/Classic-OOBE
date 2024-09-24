@@ -16,7 +16,9 @@ namespace WindowsOOBERecreation
             _mainForm = mainForm;
             LoadClockHTML();
             FetchAndPopulateTimeZones(timeZoneCombo);
-
+            monthCalendar1.AutoSize = false;
+            monthCalendar1.Width = 170;
+            monthCalendar1.Height = 137;
             timeZoneCombo.SelectedIndexChanged += TimeZoneCombo_SelectedIndexChanged;
         }
 

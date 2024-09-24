@@ -43,5 +43,11 @@ namespace WindowsOOBERecreation
         {
             nextButton.Enabled = checkBox1.Checked;
         }
+
+        private void nextButton_Click(object sender, EventArgs e)
+        {
+            Finalizing finalizingForm = new Finalizing(_mainForm);
+            _mainForm.LoadFormIntoPanel(finalizingForm);
+        }
     }
 }
