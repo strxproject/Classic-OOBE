@@ -61,22 +61,42 @@ namespace WindowsOOBERecreation.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static System.Drawing.Bitmap backallowed {
+        internal static byte[] backallowed {
             get {
                 object obj = ResourceManager.GetObject("backallowed", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return ((byte[])(obj));
             }
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static System.Drawing.Bitmap backnotallowed {
+        internal static byte[] backhovered {
+            get {
+                object obj = ResourceManager.GetObject("backhovered", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] backnotallowed {
             get {
                 object obj = ResourceManager.GetObject("backnotallowed", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] backpressed {
+            get {
+                object obj = ResourceManager.GetObject("backpressed", resourceCulture);
+                return ((byte[])(obj));
             }
         }
         
