@@ -144,6 +144,8 @@
   <ItemGroup>
     <None Include="Resources\branding.bmp" />
     <None Include="Resources\image.png" />
+    <None Include="Resources\backallowed.png" />
+    <None Include="Resources\backnotallowed.png" />
     <Content Include="wysi_icon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

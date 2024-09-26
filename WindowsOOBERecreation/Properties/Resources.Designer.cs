@@ -63,6 +63,26 @@ namespace WindowsOOBERecreation.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap backallowed {
+            get {
+                object obj = ResourceManager.GetObject("backallowed", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap backnotallowed {
+            get {
+                object obj = ResourceManager.GetObject("backnotallowed", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap branding {
             get {
                 object obj = ResourceManager.GetObject("branding", resourceCulture);
