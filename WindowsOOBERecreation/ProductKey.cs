@@ -1,17 +1,21 @@
 ﻿using System;
 using System.Data;
 using System.Linq;
+using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using System.IO;
 
 namespace WindowsOOBERecreation
 {
     public partial class ProductKey : Form
     {
         private Main _mainForm;
+
         public ProductKey(Main mainForm)
         {
             _mainForm = mainForm;
+            _mainForm.EnablePictureBox();
             InitializeComponent();
         }
 
@@ -53,5 +57,12 @@ namespace WindowsOOBERecreation
             textBox1.TextChanged += textBox1_TextChanged;
         }
 
+        private void ProductKey_Load(object sender, EventArgs e)
+        {
+            using (MemoryStream ms = new MemoryStream(Properties.Resources.backallowed))
+            {
+                _mainForm.pictureBox2.Image = Image.FromStream(ms);
+            }
+        }
     }
 }

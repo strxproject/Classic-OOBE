@@ -31,7 +31,7 @@ namespace WindowsOOBERecreation
         {
             try
             {
-                Process.Start("shutdown", "/l");
+                //Process.Start("shutdown", "/l");
             }
             catch (Exception ex)
             {

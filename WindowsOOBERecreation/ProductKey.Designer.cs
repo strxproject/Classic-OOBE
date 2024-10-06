@@ -201,6 +201,7 @@
             this.MinimizeBox = false;
             this.Name = "ProductKey";
             this.ShowIcon = false;
+            this.Load += new System.EventHandler(this.ProductKey_Load);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

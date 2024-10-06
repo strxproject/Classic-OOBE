@@ -12,6 +12,7 @@ namespace WindowsOOBERecreation
         {
             InitializeComponent();
             _mainForm = mainForm;
+            _mainForm.DisablePictureBox();
 
             nextButton.Enabled = false;
             LoadLicenseFile();
