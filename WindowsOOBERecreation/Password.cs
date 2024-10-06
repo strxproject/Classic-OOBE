@@ -29,11 +29,6 @@ namespace WindowsOOBERecreation
             string confirmPassword = confpasswordBox.Text;
             string passwordHint = passwordHintBox.Text;
 
-            // Conditions to enable the next button:
-            // 1. If all are empty, allow skipping.
-            // 2. If password is entered but no confirmation or hint, do not allow.
-            // 3. If password and confirmation are entered but no hint, do not allow.
-            // 4. If all fields are filled, allow the button.
             if (string.IsNullOrEmpty(password) && string.IsNullOrEmpty(confirmPassword) && string.IsNullOrEmpty(passwordHint))
             {
                 nextButton.Enabled = true;
@@ -66,6 +61,10 @@ namespace WindowsOOBERecreation
 
                 ExecuteCommand($"net localgroup Administrators /add \"{_username}\"");
                 ChangeComputerName(_computerName);
+
+                Properties.Settings.Default.username = _username;
+                Properties.Settings.Default.password = password;
+                Properties.Settings.Default.Save();
 
                 ProductKey ProductKeyForm = new ProductKey(_mainForm);
                 _mainForm.LoadFormIntoPanel(ProductKeyForm);
