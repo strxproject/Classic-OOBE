@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
 namespace WindowsOOBERecreation
@@ -9,6 +10,9 @@ namespace WindowsOOBERecreation
         private Main _mainForm;
         private string _username;
         private string _computerName;
+
+        [DllImport("kernel32.dll")]
+        static extern bool SetComputerName(string lpComputerName);
 
         public Password(Main mainForm, string username, string computerName)
         {
@@ -101,16 +105,20 @@ namespace WindowsOOBERecreation
             }
         }
 
-        private void ChangeComputerName(string computerName)
+        public static bool ChangeComputerName(string newComputerName)
         {
-            try
+            bool isChanged = SetComputerName(newComputerName);
+
+            if (isChanged)
             {
-                ExecuteCommand($"WMIC computersystem where name=\"%COMPUTERNAME%\" call rename name=\"{computerName}\"");
+                Console.WriteLine("Computer name changed successfully to: " + newComputerName);
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show($"An error occurred while changing the computer name: {ex.Message}");
+                Console.WriteLine("Failed to change the computer name.");
             }
+
+            return isChanged;
         }
     }
 }
