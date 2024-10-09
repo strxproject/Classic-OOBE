@@ -16,8 +16,12 @@ namespace WindowsOOBERecreation
         {
             InitializeComponent();
 
+            Background backgroundForm = new Background();
+            backgroundForm.Show();
+
             mainPanel = new Panel();
             mainPanel.Dock = DockStyle.Fill;
+            this.TopMost = true;
             this.Controls.Add(mainPanel);
 
             LoadStartForm();

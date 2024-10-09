@@ -52,6 +52,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Background.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Background.Designer.cs">
+      <DependentUpon>Background.cs</DependentUpon>
+    </Compile>
     <Compile Include="Finalizing.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +102,9 @@
     <Compile Include="TimeAndDate.Designer.cs">
       <DependentUpon>TimeAndDate.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Background.resx">
+      <DependentUpon>Background.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Finalizing.resx">
       <DependentUpon>Finalizing.cs</DependentUpon>
     </EmbeddedResource>
@@ -145,6 +154,7 @@
     <None Include="Resources\branding.bmp" />
     <None Include="Resources\image.png" />
     <None Include="Resources\backallowed.png" />
+    <None Include="Resources\bg.png" />
     <Content Include="wysi_icon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
