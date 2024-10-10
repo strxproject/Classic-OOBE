@@ -40,19 +40,17 @@ namespace WindowsOOBERecreation
                 using (RegistryKey key = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Microsoft\Windows NT\CurrentVersion\WinLogon", true))
                 {
                     key?.SetValue("AutoAdminLogon", "1", RegistryValueKind.String);
-                    key?.SetValue("AutoLogonCount", 1, RegistryValueKind.DWord);
+                    key?.SetValue("AutoLogonCount", "2", RegistryValueKind.DWord);
                     LogToFile(logFilePath, $"Set AutoAdminLogon to 1 and AutoLogonCount to 1");
 
                     key?.SetValue("DefaultUserName", Properties.Settings.Default.username, RegistryValueKind.String);
                     LogToFile(logFilePath, $"Set DefaultUserName to {Properties.Settings.Default.username}");
 
-                    if (!string.IsNullOrEmpty(Properties.Settings.Default.password))
+                    string password = Properties.Settings.Default.password ?? "";
+                    using (var regKey = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Microsoft\Windows NT\CurrentVersion\WinLogon", true))
                     {
-                        using (var regKey = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Microsoft\Windows NT\CurrentVersion\WinLogon", true))
-                        {
-                            regKey?.SetValue("DefaultPassword", Properties.Settings.Default.password, RegistryValueKind.String);
-                            LogToFile(logFilePath, $"Set DefaultPassword to {Properties.Settings.Default.password}");
-                        }
+                        regKey?.SetValue("DefaultPassword", password, RegistryValueKind.String);
+                        LogToFile(logFilePath, $"Set DefaultPassword to {(string.IsNullOrEmpty(password) ? "an empty string" : password)}");
                     }
                 }
                 using (RegistryKey key = Registry.LocalMachine.OpenSubKey(@"SYSTEM\Setup", true))
@@ -67,14 +65,8 @@ namespace WindowsOOBERecreation
                     LogToFile(logFilePath, "Set OOBEInProgress, RestartSetup, SetupPhase, SetupSupported, SetupType, and SystemSetupInProgress to 0 or 1");
                 }
 
-                LogToFile(logFilePath, "System is restarting now");
-                Process.Start(new ProcessStartInfo
-                {
-                    FileName = "shutdown",
-                    Arguments = "/r /t 0",
-                    UseShellExecute = true,
-                    Verb = "runas"
-                });
+                LogToFile(logFilePath, "Exiting now");
+                Environment.Exit(0);
             }
             catch (Exception ex)
             {
