@@ -35,34 +35,31 @@ namespace WindowsOOBERecreation
 
             try
             {
-                string appDirectory = Application.StartupPath;
-
-                using (RegistryKey key = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Microsoft\Windows NT\CurrentVersion\WinLogon", true))
+                string appDirectory = Application.StartupPath;A
+                using (RegistryKey winlogonKey = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon", true))
                 {
-                    key?.SetValue("AutoAdminLogon", "1", RegistryValueKind.String);
-                    key?.SetValue("AutoLogonCount", "2", RegistryValueKind.DWord);
-                    LogToFile(logFilePath, $"Set AutoAdminLogon to 1 and AutoLogonCount to 1");
-
-                    key?.SetValue("DefaultUserName", Properties.Settings.Default.username, RegistryValueKind.String);
-                    LogToFile(logFilePath, $"Set DefaultUserName to {Properties.Settings.Default.username}");
-
-                    string password = Properties.Settings.Default.password ?? "";
-                    using (var regKey = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Microsoft\Windows NT\CurrentVersion\WinLogon", true))
+                    if (winlogonKey != null)
                     {
-                        regKey?.SetValue("DefaultPassword", password, RegistryValueKind.String);
-                        LogToFile(logFilePath, $"Set DefaultPassword to {(string.IsNullOrEmpty(password) ? "an empty string" : password)}");
+                        SetRegistryValue(winlogonKey, "AutoAdminLogon", "1", RegistryValueKind.String, logFilePath);
+                        SetRegistryValue(winlogonKey, "AutoLogonCount", 2, RegistryValueKind.DWord, logFilePath);
+                        SetRegistryValue(winlogonKey, "DefaultUserName", Properties.Settings.Default.username, RegistryValueKind.String, logFilePath);
+
+                        string password = Properties.Settings.Default.password ?? "";
+                        SetRegistryValue(winlogonKey, "DefaultPassword", password, RegistryValueKind.String, logFilePath);
                     }
                 }
-                using (RegistryKey key = Registry.LocalMachine.OpenSubKey(@"SYSTEM\Setup", true))
-                {
-                    key?.SetValue("OOBEInProgress", 0, RegistryValueKind.DWord);
-                    key?.SetValue("RestartSetup", 0, RegistryValueKind.DWord);
-                    key?.SetValue("SetupPhase", 0, RegistryValueKind.DWord);
-                    key?.SetValue("SetupSupported", 1, RegistryValueKind.DWord);
-                    key?.SetValue("SetupType", 0, RegistryValueKind.DWord);
-                    key?.SetValue("SystemSetupInProgress", 0, RegistryValueKind.DWord);
 
-                    LogToFile(logFilePath, "Set OOBEInProgress, RestartSetup, SetupPhase, SetupSupported, SetupType, and SystemSetupInProgress to 0 or 1");
+                using (RegistryKey setupKey = Registry.LocalMachine.OpenSubKey(@"SYSTEM\Setup", true))
+                {
+                    if (setupKey != null)
+                    {
+                        SetRegistryValue(setupKey, "OOBEInProgress", 0, RegistryValueKind.DWord, logFilePath);
+                        SetRegistryValue(setupKey, "RestartSetup", 0, RegistryValueKind.DWord, logFilePath);
+                        SetRegistryValue(setupKey, "SetupPhase", 0, RegistryValueKind.DWord, logFilePath);
+                        SetRegistryValue(setupKey, "SetupSupported", 1, RegistryValueKind.DWord, logFilePath);
+                        SetRegistryValue(setupKey, "SetupType", 0, RegistryValueKind.DWord, logFilePath);
+                        SetRegistryValue(setupKey, "SystemSetupInProgress", 0, RegistryValueKind.DWord, logFilePath);
+                    }
                 }
 
                 LogToFile(logFilePath, "Exiting now");
@@ -72,6 +69,29 @@ namespace WindowsOOBERecreation
             {
                 LogToFile(logFilePath, $"An error occurred: {ex.Message}");
                 Console.WriteLine($"An error occurred: {ex.Message}");
+            }
+        }
+
+        private void SetRegistryValue(RegistryKey key, string valueName, object value, RegistryValueKind valueKind, string logFilePath)
+        {
+            try
+            {
+                object existingValue = key.GetValue(valueName);
+
+                if (existingValue == null)
+                {
+                    key.SetValue(valueName, value, valueKind);
+                    LogToFile(logFilePath, $"Created and set {valueName} to {value}.");
+                }
+                else
+                {
+                    key.SetValue(valueName, value, valueKind);
+                    LogToFile(logFilePath, $"Updated {valueName} to {value}.");
+                }
+            }
+            catch (Exception ex)
+            {
+                LogToFile(logFilePath, $"Failed to set {valueName}: {ex.Message}");
             }
         }
 
