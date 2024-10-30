@@ -35,7 +35,7 @@ namespace WindowsOOBERecreation
 
             try
             {
-                string appDirectory = Application.StartupPath;A
+                string appDirectory = Application.StartupPath;
                 using (RegistryKey winlogonKey = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon", true))
                 {
                     if (winlogonKey != null)

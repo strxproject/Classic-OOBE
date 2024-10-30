@@ -118,34 +118,46 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="image" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="backhovered" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\backhovered.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="backallowed" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\backallowed.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="16001200" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\16001200.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="username" xml:space="preserve">
     <value />
   </data>
+  <data name="backnotallowed" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\backnotallowed.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="7681280" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\7681280.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="12801024" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\12801024.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="branding" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\branding.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="password" xml:space="preserve">
-    <value />
+  <data name="1024768" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1024768.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="backallowed" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\backallowed.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="wysi_icon-10" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\wysi_icon-10.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="backnotallowed" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\backnotallowed.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="backpressed" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\backpressed.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="backhovered" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\backhovered.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="password" xml:space="preserve">
+    <value />
   </data>
-  <data name="bg" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="19201200" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\19201200.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
