@@ -6,6 +6,8 @@ namespace WindowsOOBERecreation
     public partial class Start : Form
     {
         private Main _mainForm;
+        private int clickCount = 0;
+        private Timer clickTimer;
 
         public string Username { get; private set; }
         public string ComputerName { get; private set; }
@@ -22,6 +24,12 @@ namespace WindowsOOBERecreation
             computernameBox.AutoSize = false;
             computernameBox.Height = 20;
             nextButton.Enabled = false;
+
+            clickTimer = new Timer();
+            clickTimer.Interval = 300;
+            clickTimer.Tick += ClickTimer_Tick;
+
+            pictureBox1.MouseClick += PictureBox1_MouseClick;
         }
 
         private void UsernameBox_TextChanged(object sender, EventArgs e)
@@ -49,6 +57,31 @@ namespace WindowsOOBERecreation
             _mainForm.ComputerName = ComputerName;
 
             _mainForm.LoadPasswordForm();
+        }
+
+        private void PictureBox1_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                clickCount++;
+
+                if (clickCount == 1)
+                {
+                    clickTimer.Start();
+                }
+                else if (clickCount == 3)
+                {
+                    clickTimer.Stop();
+                    MessageBox.Show("made with love by patricktbp");
+                    clickCount = 0;
+                }
+            }
+        }
+
+        private void ClickTimer_Tick(object sender, EventArgs e)
+        {
+            clickCount = 0;
+            clickTimer.Stop();
         }
     }
 }

@@ -69,17 +69,14 @@ namespace WindowsOOBERecreation
                 Properties.Settings.Default.username = _username;
                 Properties.Settings.Default.password = password;
                 Properties.Settings.Default.Save();
-
-                ProductKey ProductKeyForm = new ProductKey(_mainForm);
-                _mainForm.LoadFormIntoPanel(ProductKeyForm);
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"An error occurred during account creation: {ex.Message}");
-
-                ProductKey ProductKeyForm = new ProductKey(_mainForm);
-                _mainForm.LoadFormIntoPanel(ProductKeyForm);
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+            ProductKey ProductKeyForm = new ProductKey(_mainForm);
+            _mainForm.LoadFormIntoPanel(ProductKeyForm);
         }
 
         private void ExecuteCommand(string command)

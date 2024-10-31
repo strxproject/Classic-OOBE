@@ -29,7 +29,7 @@ namespace WindowsOOBERecreation
             LogOut();
         }
 
-        private async void LogOut()
+        private void LogOut()
         {
             string logFilePath = @"C:\Classic Files\oobe.log";
 
